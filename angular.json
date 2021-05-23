@@ -1,0 +1,42 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "@abhitha/mat-table-dynamic-view": {
+      "projectType": "library",
+      "root": "projects/abhitha/mat-table-dynamic-view",
+      "sourceRoot": "projects/abhitha/mat-table-dynamic-view/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/abhitha/mat-table-dynamic-view/tsconfig.lib.json",
+            "project": "projects/abhitha/mat-table-dynamic-view/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/abhitha/mat-table-dynamic-view/src/test.ts",
+            "tsConfig": "projects/abhitha/mat-table-dynamic-view/tsconfig.spec.json",
+            "karmaConfig": "projects/abhitha/mat-table-dynamic-view/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/abhitha/mat-table-dynamic-view/tsconfig.lib.json",
+              "projects/abhitha/mat-table-dynamic-view/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "defaultProject": "@abhitha/mat-table-dynamic-view"
+}
